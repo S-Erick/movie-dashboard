@@ -5,6 +5,7 @@ import { Home } from "./Pages/Home/Home";
 import { UserAccount } from "./Pages/UserAccount/UserAccount";
 import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer";
 import { Login } from "./Pages/Login/Login";
+import { NotFoundPage } from "./Pages/404/404";
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
         <Route path="/account" element={<UserAccount />} />
         <Route path="/player" element={<MoviePlayer />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
