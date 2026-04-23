@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Header } from "./Components/Header";
-import { Footer } from "./Components/Footer";
-import { Home } from "./Pages/Home/Home";
-import { UserAccount } from "./Pages/UserAccount/UserAccount";
-import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer";
-import { Login } from "./Pages/Login/Login";
-import { NotFoundPage } from "./Pages/404/404";
+import { Header } from "./Components/Header.jsx";
+import { Footer } from "./Components/Footer.jsx";
+import { Home } from "./Pages/Home/Home.jsx";
+import { UserAccount } from "./Pages/UserAccount/UserAccount.jsx";
+import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer.jsx";
+import { Login } from "./Pages/Login/Login.jsx";
+import { NotFoundPage } from "./Pages/404.jsx";
 
 export function App() {
   return (
