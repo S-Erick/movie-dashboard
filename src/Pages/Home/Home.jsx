@@ -32,7 +32,7 @@ export function Home() {
             <img
               src={`${IMAGE_BASE_URL}${movie.poster_path}`}
               alt={movie.title}
-              className="w-full overflow-hidden h-105"
+              className="w-full"
             />
             <p className="py-2">{movie.title}</p>
           </div>
