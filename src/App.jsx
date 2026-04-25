@@ -6,6 +6,7 @@ import { UserAccount } from "./Pages/UserAccount/UserAccount.jsx";
 import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer.jsx";
 import { Login } from "./Pages/Login/Login.jsx";
 import { NotFoundPage } from "./Pages/404.jsx";
+import { Movies } from "./Pages/Movies/Movies.jsx";
 
 export function App() {
   return (
@@ -13,6 +14,7 @@ export function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
         <Route path="/account" element={<UserAccount />} />
         <Route path="/player" element={<MoviePlayer />} />
         <Route path="/login" element={<Login />} />
