@@ -2,17 +2,17 @@ import { artworks, panelColors } from "./Data.jsx";
 
 export function Sidebar({ active, current, colors, goTo }) {
   return (
-    <aside className="w-52 flex-shrink-0 border-r border-[#1c1c1c] flex flex-col py-6 px-5 gap-5 relative z-10 overflow-hidden">
+    <aside className="w-52 flex-shrink-0 border-r border-[var(--bg-surface-2)] flex flex-col py-6 px-5 gap-5 relative z-10 overflow-hidden">
       <div
-        className="w-14 h-14 border border-[#2a2a2a] transition-all duration-500"
+        className="w-14 h-14 border border-[var(--border-default)] transition-all duration-500"
         style={{ background: colors.accent + "44" }}
       />
 
       <div>
-        <div className="text-[#555] text-[9px] tracking-[0.25em] uppercase mb-2">
+        <div className="text-[var(--text-dim-3)] text-[9px] tracking-[0.25em] uppercase mb-2">
           ARKNIGHTS: ENDFIELD
         </div>
-        <div className="h-1 w-full bg-[#1a1a1a] mb-1">
+        <div className="h-1 w-full bg-[var(--bg-surface-1)] mb-1">
           <div
             className="h-full transition-all duration-500"
             style={{
@@ -21,7 +21,7 @@ export function Sidebar({ active, current, colors, goTo }) {
             }}
           />
         </div>
-        <div className="text-[#3a3a3a] text-[9px] tracking-widest font-mono">
+        <div className="text-[var(--text-dim-1)] text-[9px] tracking-widest font-mono">
           {String(active + 1).padStart(2, "0")}/
           {String(artworks.length).padStart(2, "0")}
         </div>
@@ -33,19 +33,19 @@ export function Sidebar({ active, current, colors, goTo }) {
             key={label}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="w-3 h-3 border border-[#2a2a2a] group-hover:border-[#555] transition-colors" />
-            <span className="text-[#3a3a3a] text-[9px] tracking-wider">
+            <div className="w-3 h-3 border border-[var(--border-default)] group-hover:border-[var(--text-dim-3)] transition-colors" />
+            <span className="text-[var(--text-dim-1)] text-[9px] tracking-wider">
               {label}
             </span>
           </label>
         ))}
       </div>
 
-      <div className="border-t border-[#1c1c1c]" />
+      <div className="border-t border-[var(--bg-surface-2)]" />
 
       <div key={`info-${active}`} className="fade-info flex flex-col gap-4">
         <div>
-          <div className="text-[#3a3a3a] text-[9px] tracking-[0.2em] mb-1">
+          <div className="text-[var(--text-dim-1)] text-[9px] tracking-[0.2em] mb-1">
             //Theme
           </div>
           <div className="text-white text-sm font-semibold tracking-wide">
@@ -53,7 +53,7 @@ export function Sidebar({ active, current, colors, goTo }) {
           </div>
         </div>
         <div>
-          <div className="text-[#3a3a3a] text-[9px] tracking-[0.2em] mb-1">
+          <div className="text-[var(--text-dim-1)] text-[9px] tracking-[0.2em] mb-1">
             //Creator
           </div>
           <div className="text-white text-sm font-semibold">

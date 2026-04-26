@@ -1,6 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
 @import 'tailwindcss';
 
-body{
-  background-color: rgb(20, 20, 20);
-  color: rgba(245, 245, 245, 0.849);
+:root {
+  /* Backgrounds */
+  --bg-base:      #0f0f0f;
+  --bg-body:      #141414;
+  --bg-surface-1: #1a1a1a;
+  --bg-surface-2: #1c1c1c;
+  --bg-surface-3: #1e1e1e;
+
+  /* Borders */
+  --border-subtle:  #252525;
+  --border-default: #2a2a2a;
+
+  /* Text */
+  --text-base:   rgba(245, 245, 245, 0.849);
+  --text-dim-1:  #3a3a3a;
+  --text-dim-2:  #444;
+  --text-dim-3:  #555;
+  --text-muted:  #888;
+  --text-soft:   #bbb;
+  --text-bright: #fff;
+
+  /* Accents */
+  --accent-green:        #4ade80;
+  --accent-yellow:       #c8b84a;
+  --accent-yellow-hover: #d9ca5a;
 }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-base);
+  font-family: 'Rajdhani', 'Share Tech Mono', monospace;
+}
+
+/* ── Nav items ────────────────────────────────────────── */
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dim-3);
+  padding: 0 4px;
+}
+.nav-item:hover { color: var(--text-soft); }
+.nav-item.active { color: var(--text-bright); }
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 12px;
+  background: var(--accent-green);
+}
+
+/* ── Animations ───────────────────────────────────────── */
+.glitch-text { animation: glitch 9s infinite; }
+@keyframes glitch {
+  0%, 88%, 100% { transform: translate(0); }
+  90% { transform: translate(-2px, 1px); clip-path: inset(10% 0 70% 0); }
+  92% { transform: translate(2px, -1px); clip-path: inset(65% 0 15% 0); }
+  94% { transform: translate(0); }
+}
+
+.fade-info { animation: fadeInfo 0.35s ease forwards; }
+@keyframes fadeInfo {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Icon buttons ─────────────────────────────────────── */
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: transparent;
+  color: var(--text-muted);
+}
+.icon-btn:hover {
+  border-color: var(--text-dim-3);
+  background: var(--bg-surface-3);
+  color: var(--text-bright);
+}
+.icon-btn.yellow { background: var(--accent-yellow); border-color: var(--accent-yellow); color: black; }
+.icon-btn.yellow:hover { background: var(--accent-yellow-hover); }
