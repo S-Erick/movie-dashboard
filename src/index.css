@@ -3,23 +3,23 @@
 
 :root {
   /* Backgrounds */
-  --bg-base:      #0f0f0f;
+  --bg-base:      #0a0a0a;
   --bg-body:      #141414;
-  --bg-surface-1: #1a1a1a;
-  --bg-surface-2: #1c1c1c;
-  --bg-surface-3: #1e1e1e;
+  --bg-surface-1: #7a1d1d;
+  --bg-surface-2: #ffae00;
+  --bg-surface-3: #ff0597;
 
   /* Borders */
-  --border-subtle:  #252525;
-  --border-default: #2a2a2a;
+  --border-subtle:  #6d2929;
+  --border-default: #ff0000;
 
   /* Text */
-  --text-base:   rgba(245, 245, 245, 0.849);
-  --text-dim-1:  #3a3a3a;
-  --text-dim-2:  #444;
-  --text-dim-3:  #555;
-  --text-muted:  #888;
-  --text-soft:   #bbb;
+  --text-base:   #ffffffd8;
+  --text-dim-1:  #00ff2a;
+  --text-dim-2:  #009cf7;
+  --text-dim-3:  #5900ff;
+  --text-muted:  #ffee00;
+  --text-soft:   #ff00f2;
   --text-bright: #fff;
 
   /* Accents */

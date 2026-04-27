@@ -45,15 +45,17 @@ export function CarouselCard({
           : "0 0 30px rgba(0,0,0,0.6)",
       }}
     >
-      <div
+      {/* background */}
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
           background: `linear-gradient(135deg, ${colors.from}, ${colors.via}, ${colors.to})`,
         }}
-      />
+      /> */}
 
-      <div
+      {/* grilla */}
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
@@ -61,9 +63,10 @@ export function CarouselCard({
                           linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
         }}
-      />
+      /> */}
 
-      <div
+      {/* texto */}
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
@@ -85,9 +88,10 @@ export function CarouselCard({
         >
           {artwork.theme.toUpperCase()}
         </span>
-      </div>
+      </div> */}
 
-      <div
+      {/* cuadrado decorativo arriba derecha */}
+      {/* <div
         style={{
           position: "absolute",
           top: 20,
@@ -97,8 +101,10 @@ export function CarouselCard({
           border: `1px solid ${colors.accent}22`,
           transform: "rotate(45deg)",
         }}
-      />
-      <div
+      /> */}
+
+      {/* cuadrado decorativo abajo izquierda */}
+      {/* <div
         style={{
           position: "absolute",
           bottom: 30,
@@ -107,8 +113,10 @@ export function CarouselCard({
           height: 30,
           border: `1px solid ${colors.accent}15`,
         }}
-      />
-      <div
+      /> */}
+
+      {/* linea horizontal central */}
+      {/* <div
         style={{
           position: "absolute",
           top: "40%",
@@ -117,20 +125,22 @@ export function CarouselCard({
           height: 1,
           background: `linear-gradient(90deg, transparent, ${colors.accent}30, transparent)`,
         }}
-      />
+      /> */}
 
-      <div
+      {/* fondo retro */}
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
           background: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)`,
           pointerEvents: "none",
         }}
-      />
+      /> */}
 
       {isCenter && (
         <>
-          <div
+          {/* esquinero arriba izquierda */}
+          {/* <div
             style={{
               position: "absolute",
               top: 10,
@@ -140,8 +150,10 @@ export function CarouselCard({
               borderTop: `1px solid ${colors.accent}80`,
               borderLeft: `1px solid ${colors.accent}80`,
             }}
-          />
-          <div
+          /> */}
+
+          {/* esquinero arriba derecha */}
+          {/* <div
             style={{
               position: "absolute",
               top: 10,
@@ -151,8 +163,9 @@ export function CarouselCard({
               borderTop: `1px solid ${colors.accent}80`,
               borderRight: `1px solid ${colors.accent}80`,
             }}
-          />
-          <div
+          /> */}
+          {/* esquinero abajo izquierda */}
+          {/* <div
             style={{
               position: "absolute",
               bottom: 10,
@@ -162,19 +175,21 @@ export function CarouselCard({
               borderBottom: `1px solid ${colors.accent}80`,
               borderLeft: `1px solid ${colors.accent}80`,
             }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 10,
-              right: 10,
-              width: 16,
-              height: 16,
-              borderBottom: `1px solid ${colors.accent}80`,
-              borderRight: `1px solid ${colors.accent}80`,
-            }}
-          />
-          <div
+          /> */}
+          {/* esquinero abajo derecha */}
+          {/* <div
+              style={{
+                position: "absolute",
+                bottom: 10,
+                right: 10,
+                width: 16,
+                height: 16,
+                borderBottom: `1px solid ${colors.accent}80`,
+                borderRight: `1px solid ${colors.accent}80`,
+              }}
+            /> */}
+          {/* cuadros decorativos pequeños arriba izquierda */}
+          {/* <div
             style={{
               position: "absolute",
               top: 12,
@@ -183,6 +198,7 @@ export function CarouselCard({
               gap: 4,
             }}
           >
+            cuadro decorativo interno uno
             <div
               style={{
                 width: 6,
@@ -191,6 +207,7 @@ export function CarouselCard({
                 opacity: 0.8,
               }}
             />
+            cuadro decorativo interno dos
             <div
               style={{
                 width: 6,
@@ -199,8 +216,9 @@ export function CarouselCard({
                 opacity: 0.4,
               }}
             />
-          </div>
-          <div
+          </div> */}
+          {/* numeros internos arriba derecha */}
+          {/* <div
             style={{
               position: "absolute",
               top: 12,
@@ -212,11 +230,12 @@ export function CarouselCard({
             }}
           >
             {artwork.num}/{artworks.length}
-          </div>
+          </div> */}
         </>
       )}
 
-      <div
+      {/* gradiente texto abajo */}
+      {/* <div
         style={{
           position: "absolute",
           bottom: 0,
@@ -229,6 +248,7 @@ export function CarouselCard({
           padding: "0 14px 10px",
         }}
       >
+        textos abajo izquierda 
         <span
           style={{
             fontFamily: "'Share Tech Mono', monospace",
@@ -240,18 +260,17 @@ export function CarouselCard({
         >
           ARKNIGHTS: ENDFIELD — {artwork.theme}
         </span>
-      </div>
+      </div> */}
 
-      {isCenter && (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            boxShadow: `inset 0 0 40px rgba(0,0,0,0.4), inset 0 0 1px ${colors.accent}40`,
-            pointerEvents: "none",
-          }}
-        />
-      )}
+      {/* viñeta de enfoque */}
+      {/* <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          boxShadow: `inset 0 0 40px rgba(0,0,0,0.4), inset 0 0 1px ${colors.accent}40`,
+          pointerEvents: "none",
+        }}
+      /> */}
     </div>
   );
 }

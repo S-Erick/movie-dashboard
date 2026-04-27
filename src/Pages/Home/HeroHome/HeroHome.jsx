@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { artworks, panelColors, AUTOPLAY_MS } from "./Data.jsx";
-import { CarouselCard } from "./CarouselCard.jsx";
+import { artworks, panelColors, AUTOPLAY_MS, ArrowBtn } from "./Data.jsx";
+import { Carousel } from "./Carousel.jsx";
 import { Sidebar } from "./Sidebar.jsx";
 
 export function HeroHome() {
@@ -22,83 +22,69 @@ export function HeroHome() {
   const prev = () => goTo((active - 1 + artworks.length) % artworks.length);
   const next = () => goTo((active + 1) % artworks.length);
 
-  useEffect(() => {
-    if (isPaused) return;
-    startTimeRef.current = Date.now() - progress * AUTOPLAY_MS;
-
-    const tick = () => {
-      const elapsed = Date.now() - startTimeRef.current;
-      const pct = Math.min(elapsed / AUTOPLAY_MS, 1);
-      setProgress(pct);
-      if (pct >= 1) {
-        setActive((a) => (a + 1) % artworks.length);
-        startTimeRef.current = Date.now();
-        setProgress(0);
-      }
-      progressRef.current = requestAnimationFrame(tick);
-    };
-
-    progressRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(progressRef.current);
-  }, [isPaused]);
-
   return (
-    <div className="h-[90vh] bg-[var(--bg-base)] text-white flex flex-col select-none">
-
+    <div className="h-[100vh] pt-15 bg-[var(--bg-base)] text-white flex flex-col select-none">
       {/* Body */}
       <div className="flex flex-1 overflow-hidden min-h-0">
-        {/* Sidebar */}
         <Sidebar
           active={active}
           current={current}
           colors={colors}
           goTo={goTo}
+          current={current}
+          colors={colors}
         />
         {/* Carousel main */}
         <main className="flex-1 flex flex-col relative overflow-hidden min-w-0">
-          {/* Stage */}
           <div className="flex-1 relative">
-            {artworks.map((artwork, i) => {
-              let position = i - active;
-              if (position > artworks.length / 2) position -= artworks.length;
-              if (position < -artworks.length / 2) position += artworks.length;
-              return (
-                <CarouselCard
-                  key={artwork.id}
-                  artwork={artwork}
-                  position={position}
-                  colors={panelColors[i]}
-                  onClick={() => goTo(i)}
-                  setIsPaused={setIsPaused}
-                />
-              );
-            })}
-            {/* Vignette */}
-            <div
+            <Carousel
+              goTo={goTo}
+              setActive={setActive}
+              setIsPaused={setIsPaused}
+              setProgress={setProgress}
+              active={active}
+              isPaused={isPaused}
+              progress={progress}
+              progressRef={progressRef}
+              startTimeRef={startTimeRef}
+            />
+            {/* viñeta */}
+            {/* <div
               className="absolute inset-0 z-20 pointer-events-none"
               style={{
                 background:
                   "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)",
               }}
-            />
-            {/* Side fades */}
-            <div
+            /> */}
+
+            {/* blur lateral izquierdo */}
+            {/* <div
               className="absolute top-0 left-0 bottom-0 w-36 z-20 pointer-events-none"
-              style={{ background: "linear-gradient(to right, var(--bg-base), transparent)" }}
-            />
-            <div
+              style={{
+                background:
+                  "linear-gradient(to right, var(--bg-base), transparent)",
+              }}
+            /> */}
+
+            {/* blur lateral derecho */}
+            {/* <div
               className="absolute top-0 right-0 bottom-0 w-36 z-20 pointer-events-none"
-              style={{ background: "linear-gradient(to left, var(--bg-base), transparent)" }}
-            />
-            {/* Scan lines */}
-            <div
+              style={{
+                background:
+                  "linear-gradient(to left, var(--bg-base), transparent)",
+              }}
+            /> */}
+
+            {/* lineas retro */}
+            {/* <div
               className="absolute inset-0 z-[15] pointer-events-none"
               style={{
                 background:
                   "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 4px)",
               }}
-            />
-            {/* Autoplay progress bar */}
+            /> */}
+
+            {/* barra de progreso */}
             <div className="absolute top-0 left-0 right-0 h-px bg-[var(--bg-surface-1)] z-30">
               <div
                 style={{
@@ -109,8 +95,9 @@ export function HeroHome() {
                 }}
               />
             </div>
-            {/* Paused pill */}
-            {isPaused && (
+
+            {/* texto e icono "paused" */}
+            {/* {isPaused && (
               <div className="absolute top-4 right-6 z-30 flex items-center gap-1.5 opacity-40">
                 <div className="w-1 h-3 bg-white" />
                 <div className="w-1 h-3 bg-white" />
@@ -118,7 +105,7 @@ export function HeroHome() {
                   PAUSED
                 </span>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Footer */}
@@ -136,7 +123,8 @@ export function HeroHome() {
                   style={{
                     width: active === i ? 22 : 6,
                     height: 4,
-                    background: active === i ? colors.accent : "var(--border-subtle)",
+                    background:
+                      active === i ? colors.accent : "var(--border-subtle)",
                     border: "none",
                     cursor: "pointer",
                     padding: 0,
@@ -153,31 +141,13 @@ export function HeroHome() {
 
             <div className="flex items-center gap-3">
               <button onClick={prev} className="icon-btn" aria-label="Previous">
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
+                <ArrowBtn />
               </button>
               <span className="text-[var(--text-dim-2)] text-[11px] tracking-widest font-mono w-12 text-center">
                 {String(active + 1).padStart(2, "0")}/{artworks.length}
               </span>
               <button onClick={next} className="icon-btn" aria-label="Next">
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
+                <ArrowBtn className="rotate-180" />
               </button>
             </div>
           </footer>

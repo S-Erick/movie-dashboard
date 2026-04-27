@@ -3,11 +3,13 @@ import { artworks, panelColors } from "./Data.jsx";
 export function Sidebar({ active, current, colors, goTo }) {
   return (
     <aside className="w-52 flex-shrink-0 border-r border-[var(--bg-surface-2)] flex flex-col py-6 px-5 gap-5 relative z-10 overflow-hidden">
+      {/* cuadrado */}
       <div
-        className="w-14 h-14 border border-[var(--border-default)] transition-all duration-500"
+        className="w-14 aspect-square border border-[var(--border-default)] transition-all duration-500"
         style={{ background: colors.accent + "44" }}
       />
 
+      {/* barra de prograso */}
       <div>
         <div className="text-[var(--text-dim-3)] text-[9px] tracking-[0.25em] uppercase mb-2">
           ARKNIGHTS: ENDFIELD
