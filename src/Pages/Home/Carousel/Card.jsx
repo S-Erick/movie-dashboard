@@ -45,7 +45,7 @@ export function Card({ card }) {
           <div>
             {card.badge && (
               <span
-                className={`flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full ${BadgeColor({ type: card.badge })}`}
+                className={`flex items-center gap-1 text-[10px] font-medium px-2.5 py-1 rounded-full ${BadgeColor({ type: card.badge })}`}
               >
                 <BadgeDot type={card.badge} />
                 {card.badge}
@@ -85,14 +85,14 @@ export function Card({ card }) {
               <div className="text-[18px] font-bold leading-tight">
                 {card.dateTag}
               </div>
-              <div className="text-[9px] tracking-[0.12em] text-white/60 uppercase mt-0.5">
+              <div className="text-[11px] tracking-[0.12em] text-white/60 uppercase mt-0.5">
                 {card.sub}
               </div>
             </div>
           )}
 
           {/* title */}
-          <div className="text-[16px] font-semibold leading-snug whitespace-pre-line">
+          <div className="text-[20px] font-semibold leading-snug whitespace-pre-line">
             {card.title}
           </div>
 
@@ -104,12 +104,7 @@ export function Card({ card }) {
           {/* actions */}
           {(card.hasJoin || isEvent) && (
             <div className="flex items-center gap-2 flex-wrap">
-              {isDiscussion && card.followers && (
-                <span className="text-[10px] px-2.5 py-1 rounded-full bg-white/15">
-                  {card.followers} Seguidores
-                </span>
-              )}
-              <button className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/15 border border-white/30 hover:bg-white/28 transition-colors">
+              <button className="text-[12px] font-medium px-3 py-1 rounded-full bg-white/15 border border-white/30 hover:bg-white/28 transition-colors">
                 Unirse ›
               </button>
             </div>

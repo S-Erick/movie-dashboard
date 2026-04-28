@@ -7,7 +7,7 @@ function IconBtn({ onClick, label, children }) {
     <button
       onClick={onClick}
       aria-label={label}
-      className="w-8 h-8 border border-[var(--border-1)] flex items-center justify-center cursor-pointer transition-[border-color,background,color] duration-200 bg-transparent text-[var(--text-muted)] hover:border-[var(--border-2)] hover:bg-[var(--border-1)] hover:text-[var(--text-base)]"
+      className="w-8 h-8 border border-[var(--border-1)] flex items-center justify-center cursor-pointer transition-[border-color,background,color] duration-200 bg-transparent text-[var(--text-muted)] hover:bg-[var(--border-1)] hover:text-[var(--text-base)]"
     >
       {children}
     </button>

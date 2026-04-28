@@ -110,7 +110,7 @@ export function MovieCarousel() {
         <button className="flex items-center gap-3 text-xs text-white/50"></button>
         <Link
           to="/movies"
-          className="border border-[var(--border-1)] py-1 px-3 bg-white text-black text-base font-semibold "
+          className="border border-[var(--border-1)] py-1 px-3 bg-white text-black text-base font-semibold hover:bg-[var(--bg-base)] hover:text-[var(--text-base)]"
         >
           Entrar [↗]
         </Link>
