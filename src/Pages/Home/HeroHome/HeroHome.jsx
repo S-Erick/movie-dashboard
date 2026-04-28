@@ -40,7 +40,7 @@ export function HeroHome() {
   const next = () => goTo((active + 1) % artworks.length);
 
   return (
-    <section className="h-[90vh] pt-15 bg-[var(--bg-base)] text-white flex flex-col select-none overflow-hidden">
+    <section className="h-[90vh] pt-16 bg-[var(--bg-base)] text-white flex flex-col select-none overflow-hidden">
       {/* Carousel */}
       <div className="flex-1 relative min-h-0">
         <Carousel

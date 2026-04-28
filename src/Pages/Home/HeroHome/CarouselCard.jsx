@@ -11,7 +11,8 @@ export function CarouselCard({
   const isCenter = position === 0;
   const isVisible = abs <= 1;
 
-  const tx = position * 340;
+  const isMobile = window.innerWidth < 1024;
+  const tx = position * (isMobile ? window.innerWidth * 0.85 : 340);
   const scale = isCenter ? 1 : 0.85;
   const opacity = isCenter ? 1 : abs === 1 ? 0.45 : 0;
   const blur = isCenter ? 0 : 3;
@@ -22,7 +23,7 @@ export function CarouselCard({
       onClick={() => !isCenter && onClick()}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className={`absolute left-1/2 top-1/2 w-[min(100%,900px)] aspect-video rounded-[2px] overflow-hidden border transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] [container-type:inline-size]
+      className={`absolute left-1/2 top-1/2 w-[min(100%,900px)] aspect-[9/11.3] lg:aspect-[16/9] rounded-[2px] overflow-hidden border transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] [container-type:inline-size]
         ${isCenter ? "border-[var(--border-1)] cursor-default" : "border-[var(--border-2)] cursor-pointer"}
         ${isVisible ? "pointer-events-auto" : "pointer-events-none"}`}
       style={{

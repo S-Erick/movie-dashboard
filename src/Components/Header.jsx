@@ -8,11 +8,13 @@ const options = [
   { name: "Account", href: "/account" },
 ];
 
-const NavLinks = ({ className }) => (
+const NavLinks = ({ className, isOpen }) => (
   <ul className={`list-none ${className}`}>
     {options.map((option) => (
       <li key={option.name}>
-        <Link to={option.href}>{option.name}</Link>
+        <Link onClick={() => setIsOpen(!isOpen)} to={option.href}>
+          {option.name}
+        </Link>
       </li>
     ))}
   </ul>
@@ -28,11 +30,13 @@ export function Header() {
       </Link>
 
       <nav className="hidden md:block">
-        <NavLinks className="flex gap-8" />
+        <NavLinks isOpen={isOpen} className="flex gap-8" />
       </nav>
 
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 border border-[var(--border-1)]">{/* Profile Picture */}</div>
+        <div className="w-8 h-8 border border-[var(--border-1)]">
+          {/* Profile Picture */}
+        </div>
         <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✕" : "☰"}
         </button>
