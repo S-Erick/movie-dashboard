@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { artworks, panelColors, AUTOPLAY_MS } from "../DataHome.jsx";
+import { artworks, panelColors, AUTOPLAY_MS } from "./DataHero.jsx";
 import { CarouselCard } from "./CarouselCard.jsx";
 
 export function Carousel({

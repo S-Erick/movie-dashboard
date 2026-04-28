@@ -1,4 +1,4 @@
-import { artworks, CornerCard } from "../DataHome.jsx";
+import { artworks, CornerCard } from "./DataHero.jsx";
 
 export function CarouselCard({
   artwork,

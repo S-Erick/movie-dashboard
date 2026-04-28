@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const options = [
-  { name: "Home", href: "/" },
-  { name: "Movies", href: "/movies" },
-  { name: "Shows", href: "/shows" },
-  { name: "Account", href: "/account" },
+  { name: "Inicio", href: "/" },
+  { name: "Películas", href: "/movies" },
+  { name: "Series", href: "/shows" },
+  { name: "Cuenta", href: "/account" },
 ];
 
 const NavLinks = ({ className, onLinkClick }) => (

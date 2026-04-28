@@ -1,11 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import {
-  artworks,
-  panelColors,
-  AUTOPLAY_MS,
-  ArrowBtnL,
-  ArrowBtnR,
-} from "../DataHome.jsx";
+import { artworks, panelColors, AUTOPLAY_MS } from "./DataHero.jsx";
 import { Carousel } from "./Carousel.jsx";
 
 function IconBtn({ onClick, label, children }) {
@@ -73,7 +67,7 @@ export function HeroHome() {
             <div className="w-1 h-3 bg-[var(--text-base)]" />
             <div className="w-1 h-3 bg-[var(--text-base)]" />
             <span className="text-[var(--text-base)] text-[8px] tracking-widest ml-1">
-              PAUSED
+              PAUSADO
             </span>
           </div>
         )}
@@ -101,15 +95,33 @@ export function HeroHome() {
 
         {/* botones navegación */}
         <div className="flex items-center gap-3">
-          <IconBtn onClick={prev} label="Previous">
-            <ArrowBtnL />
+          <IconBtn onClick={prev} label="Anterior">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </IconBtn>
           <span className="text-[var(--text-dim-2)] text-[11px] tracking-widest w-12 text-center">
             {String(active + 1).padStart(2, "0")}/
             {String(artworks.length).padStart(2, "0")}
           </span>
-          <IconBtn onClick={next} label="Next">
-            <ArrowBtnR />
+          <IconBtn onClick={next} label="Siguiente">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </IconBtn>
         </div>
       </div>

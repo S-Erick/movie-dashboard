@@ -1,3 +1,3 @@
 export function UserAccount() {
-  return <div>User Account Page</div>;
+  return <div>Cuenta de usuario</div>;
 }

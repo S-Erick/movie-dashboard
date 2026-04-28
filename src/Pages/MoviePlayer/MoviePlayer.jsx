@@ -1,3 +1,3 @@
 export function MoviePlayer() {
-  return <div>Movie Player Page</div>;
+  return <div>Reproductor</div>;
 }
