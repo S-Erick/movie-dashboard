@@ -42,7 +42,7 @@ export function HeroHome() {
   return (
     <section className="h-[90vh] pt-16 bg-[var(--bg-base)] text-white flex flex-col select-none overflow-hidden">
       {/* Carousel */}
-      <div className="flex-1 relative min-h-0">
+      <div className="flex-1 relative min-h-0 overflow-hidden">
         <Carousel
           goTo={goTo}
           setActive={setActive}

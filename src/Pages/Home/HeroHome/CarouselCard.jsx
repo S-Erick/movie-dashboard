@@ -23,7 +23,7 @@ export function CarouselCard({
       onClick={() => !isCenter && onClick()}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className={`absolute left-1/2 top-1/2 w-[min(100%,900px)] aspect-[9/11.3] lg:aspect-[16/9] rounded-[2px] overflow-hidden border transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] [container-type:inline-size]
+      className={`absolute left-1/2 top-1/2 w-[min(100%,900px)] aspect-[9/16] lg:aspect-[16/9] rounded-[2px] overflow-hidden border transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] [container-type:inline-size]
         ${isCenter ? "border-[var(--border-1)] cursor-default" : "border-[var(--border-2)] cursor-pointer"}
         ${isVisible ? "pointer-events-auto" : "pointer-events-none"}`}
       style={{

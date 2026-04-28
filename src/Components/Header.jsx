@@ -8,11 +8,11 @@ const options = [
   { name: "Account", href: "/account" },
 ];
 
-const NavLinks = ({ className, isOpen }) => (
+const NavLinks = ({ className, onLinkClick }) => (
   <ul className={`list-none ${className}`}>
     {options.map((option) => (
       <li key={option.name}>
-        <Link onClick={() => setIsOpen(!isOpen)} to={option.href}>
+        <Link to={option.href} onClick={onLinkClick}>
           {option.name}
         </Link>
       </li>
@@ -30,7 +30,7 @@ export function Header() {
       </Link>
 
       <nav className="hidden md:block">
-        <NavLinks isOpen={isOpen} className="flex gap-8" />
+        <NavLinks className="flex gap-8" onLinkClick={() => setIsOpen(false)} />
       </nav>
 
       <div className="flex items-center gap-3">
@@ -44,7 +44,10 @@ export function Header() {
 
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-[#1b1b1b] border-b border-[var(--border-1)] p-6 md:hidden shadow-lg z-50">
-          <NavLinks className="flex flex-col gap-5" />
+          <NavLinks
+            className="flex flex-col gap-5"
+            onLinkClick={() => setIsOpen(false)}
+          />
         </div>
       )}
     </header>
