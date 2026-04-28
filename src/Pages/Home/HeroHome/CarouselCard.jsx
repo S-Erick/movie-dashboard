@@ -63,7 +63,7 @@ export function CarouselCard({
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)`,
+          background: `repeating-linear-gradient(0deg, transparent, transparent 0.22cqw, rgba(0,0,0,0.08) 0.22cqw, rgba(0,0,0,0.08) 0.44cqw)`,
         }}
       />
 
