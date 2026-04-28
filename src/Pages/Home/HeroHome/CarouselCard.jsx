@@ -22,24 +22,14 @@ export function CarouselCard({
       onClick={() => !isCenter && onClick()}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      className={`absolute left-1/2 top-1/2 w-[min(100%,900px)] aspect-video rounded-[2px] overflow-hidden border transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] [container-type:inline-size]
+        ${isCenter ? "border-[var(--border-1)] cursor-default" : "border-[var(--border-2)] cursor-pointer"}
+        ${isVisible ? "pointer-events-auto" : "pointer-events-none"}`}
       style={{
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        width: "900px",
-        aspectRatio: "16/9",
         transform: `translateX(calc(-50% + ${tx}px)) translateY(-50%) scale(${scale})`,
         opacity,
         filter: `blur(${blur}px) brightness(${isCenter ? 1 : 0.5})`,
-        transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
         zIndex,
-        cursor: isCenter ? "default" : "pointer",
-        pointerEvents: isVisible ? "auto" : "none",
-        borderRadius: "2px",
-        overflow: "hidden",
-        border: isCenter
-          ? "1px solid var(--border-1)"
-          : "1px solid var(--border-2)",
         boxShadow: isCenter
           ? "0 0 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05)"
           : "0 0 30px rgba(0,0,0,0.6)",
@@ -47,55 +37,33 @@ export function CarouselCard({
     >
       {/* background */}
       <div
+        className="absolute inset-0"
         style={{
-          position: "absolute",
-          inset: 0,
           background: `linear-gradient(135deg, ${colors.from}, ${colors.via}, ${colors.to})`,
         }}
       />
 
       {/* grilla */}
       <div
+        className="absolute inset-0 [background-size:4.44cqw_4.44cqw]"
         style={{
-          position: "absolute",
-          inset: 0,
           backgroundImage: `linear-gradient(var(--border-2) 1px, transparent 1px),
                           linear-gradient(90deg, var(--border-2) 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
         }}
       />
 
       {/* texto */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <span
-          style={{
-            fontSize: "6.5rem",
-            fontWeight: 900,
-            color: "var(--text-3)",
-            letterSpacing: "-0.04em",
-            userSelect: "none",
-            textAlign: "center",
-          }}
-        >
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-[10cqw] font-black text-[var(--text-3)] tracking-[-0.04em] select-none text-center p-[3.3%]">
           {artwork.title.toUpperCase()}
         </span>
       </div>
 
       {/* fondo retro */}
       <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: "absolute",
-          inset: 0,
           background: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)`,
-          pointerEvents: "none",
         }}
       />
 
@@ -104,82 +72,39 @@ export function CarouselCard({
           <CornerCard colors={colors} />
 
           {/* cuadros decorativos */}
-          <div
-            style={{
-              position: "absolute",
-              top: 12,
-              left: 12,
-              display: "flex",
-              gap: 4,
-            }}
-          >
+          <div className="absolute top-3 left-3 flex gap-1">
             <div
-              style={{
-                width: 6,
-                aspectRatio: 1 / 1,
-                background: colors.accent,
-                opacity: 0.8,
-              }}
+              className="w-[6px] aspect-square opacity-80"
+              style={{ background: colors.accent }}
             />
             <div
-              style={{
-                width: 6,
-                aspectRatio: 1 / 1,
-                background: colors.accent,
-                opacity: 0.4,
-              }}
+              className="w-[6px] aspect-square opacity-40"
+              style={{ background: colors.accent }}
             />
           </div>
+
           {/* numeros internos arriba derecha */}
           <div
-            style={{
-              position: "absolute",
-              top: 12,
-              right: 14,
-              fontSize: "10px",
-              letterSpacing: "0.2em",
-              color: `${colors.accent}99`,
-            }}
+            className="absolute top-3 right-[14px] text-[10px] tracking-[0.2em]"
+            style={{ color: `${colors.accent}99` }}
           >
-            {artwork.num}/{artworks.length}
+            {artwork.num}/{String(artworks.length).padStart(2, "0")}
           </div>
         </>
       )}
 
       {/* gradiente texto abajo */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 48,
-          background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
-          display: "flex",
-          alignItems: "flex-end",
-          padding: "0 14px 10px",
-        }}
-      >
-        {/* textos abajo izquierda */}
-        <span
-          style={{
-            fontSize: "12px",
-            letterSpacing: "0.25em",
-            color: "var(--text-2)",
-            textTransform: "uppercase",
-          }}
-        >
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/70 to-transparent flex items-end px-[14px] pb-[10px]">
+        <span className="text-xs tracking-[0.25em] text-[var(--text-2)] uppercase">
           {artwork.theme}
         </span>
       </div>
 
       {/* viñeta */}
       <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: "absolute",
-          inset: 0,
           boxShadow: `inset 0 0 40px rgba(0,0,0,0.4), inset 0 0 1px ${colors.accent}40`,
-          pointerEvents: "none",
         }}
       />
     </div>

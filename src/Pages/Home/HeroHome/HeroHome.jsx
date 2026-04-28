@@ -105,7 +105,8 @@ export function HeroHome() {
             <ArrowBtnL />
           </IconBtn>
           <span className="text-[var(--text-dim-2)] text-[11px] tracking-widest w-12 text-center">
-            {String(active + 1).padStart(2, "0")}/{artworks.length}
+            {String(active + 1).padStart(2, "0")}/
+            {String(artworks.length).padStart(2, "0")}
           </span>
           <IconBtn onClick={next} label="Next">
             <ArrowBtnR />
