@@ -28,7 +28,10 @@ export function Movies() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
         {movies.map((movie) => (
-          <div key={movie.id} className="text-center border">
+          <div
+            key={movie.id}
+            className="text-center border border-[var(--border-1)] "
+          >
             <img
               src={`${IMAGE_BASE_URL}${movie.poster_path}`}
               alt={movie.title}

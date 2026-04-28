@@ -32,14 +32,14 @@ export function Header() {
       </nav>
 
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 border">{/* Profile Picture */}</div>
+        <div className="w-8 h-8 border border-[var(--border-1)]">{/* Profile Picture */}</div>
         <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✕" : "☰"}
         </button>
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1b1b1b] border-b p-6 md:hidden shadow-lg z-50">
+        <div className="absolute top-full left-0 w-full bg-[#1b1b1b] border-b border-[var(--border-1)] p-6 md:hidden shadow-lg z-50">
           <NavLinks className="flex flex-col gap-5" />
         </div>
       )}

@@ -3,59 +3,22 @@
 
 :root {
   /* Backgrounds */
-  --bg-base:      #0a0a0a;
-  --bg-body:      #141414;
-  --bg-surface-1: #7a1d1d;
-  --bg-surface-2: #ffae00;
-  --bg-surface-3: #ff0597;
+  --bg-base:      #0f0f0f;
 
   /* Borders */
-  --border-subtle:  #6d2929;
-  --border-default: #ff0000;
+  --border-1:  #ffffff26;
+  --border-2:  #ffffff0d;
 
-  /* Text */
-  --text-base:   #ffffffd8;
-  --text-dim-1:  #00ff2a;
-  --text-dim-2:  #009cf7;
-  --text-dim-3:  #5900ff;
-  --text-muted:  #ffee00;
-  --text-soft:   #ff00f2;
-  --text-bright: #fff;
+  /* Texts */
+  --text-base:   #f5f5f5d8;
+  --text-2:   #ffffff66;
+  --text-3:   #ffffff0f;
 
-  /* Accents */
-  --accent-green:        #4ade80;
-  --accent-yellow:       #c8b84a;
-  --accent-yellow-hover: #d9ca5a;
 }
-
 body {
-  background-color: var(--bg-body);
+  background-color: var(--bg-base);
   color: var(--text-base);
   font-family: 'Rajdhani', 'Share Tech Mono', monospace;
-}
-
-/* ── Nav items ────────────────────────────────────────── */
-.nav-item {
-  position: relative;
-  cursor: pointer;
-  transition: color 0.2s;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-dim-3);
-  padding: 0 4px;
-}
-.nav-item:hover { color: var(--text-soft); }
-.nav-item.active { color: var(--text-bright); }
-.nav-item.active::before {
-  content: '';
-  position: absolute;
-  left: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 12px;
-  background: var(--accent-green);
 }
 
 /* ── Animations ───────────────────────────────────────── */
@@ -72,24 +35,3 @@ body {
   from { opacity: 0; transform: translateX(-6px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-
-/* ── Icon buttons ─────────────────────────────────────── */
-.icon-btn {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  background: transparent;
-  color: var(--text-muted);
-}
-.icon-btn:hover {
-  border-color: var(--text-dim-3);
-  background: var(--bg-surface-3);
-  color: var(--text-bright);
-}
-.icon-btn.yellow { background: var(--accent-yellow); border-color: var(--accent-yellow); color: black; }
-.icon-btn.yellow:hover { background: var(--accent-yellow-hover); }
