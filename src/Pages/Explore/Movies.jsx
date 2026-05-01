@@ -16,7 +16,7 @@ export function Movies() {
 
   return (
     <BasePage
-      title="Películas populares"
+      title="Películas populares:"
       items={movies}
       renderItem={(movie) => (
         <VideoCard key={movie.id} video={movie} onSelect={setSelectedMovie} />

@@ -15,7 +15,7 @@ export function Header() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="sticky z-50 top-0 left-0 right-0 bg-[var(--bg-base)] py-6 flex items-center justify-between ">
+    <div className="sticky z-50 top-0 left-0 right-0 bg-[var(--bg-base)] py-6 flex items-center justify-between overflow-x-scroll md:overflow-x-auto">
       <nav className="flex items-center px-6 gap-6 border-b border-[var(--border-1)] shrink-0 overflow-x-auto">
         {tabs.map((tab, i) => (
           <Link
@@ -30,8 +30,8 @@ export function Header() {
       </nav>
       <input
         type="text"
-        placeholder="Search"
-        className="bg-[var(--border-2)] text-[var(--text-base)] text-sm px-4 py-1.5 w-10 outline-none border border-[var(--border-1)] placeholder-[var(--text-2)] focus:border-[var(--border-3)]"
+        placeholder="Buscar"
+        className="bg-[var(--border-2)] text-[var(--text-base)] text-sm px-4 py-1.5 outline-none border border-[var(--border-1)] placeholder-[var(--text-2)] focus:border-[var(--border-3)]"
       />
     </div>
   );

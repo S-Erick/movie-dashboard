@@ -23,7 +23,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-[var(--bg-base)] flex items-center justify-between py-6 px-25">
+    <header className="bg-[var(--bg-base)] flex items-center justify-between py-6 px-10 md:px-25">
       <Link to="/" className="flex">
         LOGO
       </Link>
@@ -42,7 +42,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1b1b1b] border-b border-[var(--border-1)] p-6 md:hidden shadow-lg z-50">
+        <div className="absolute top-20 z-100 left-0 w-full bg-[#1b1b1b] border-b border-[var(--border-1)] p-6 md:hidden shadow-lg z-50">
           <NavLinks
             className="flex flex-col gap-5"
             onLinkClick={() => setIsOpen(false)}
