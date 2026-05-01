@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header.jsx";
+import { Header } from "./Header.jsx";
 
 export const Explore = () => {
   return (
-    <div>
+    <main className="px-[10%]">
       <Header />
-      <main>
+      <>
         <Outlet />
-      </main>
-    </div>
+      </>
+    </main>
   );
 };

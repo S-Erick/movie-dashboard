@@ -3,8 +3,7 @@ import { useState } from "react";
 
 const options = [
   { name: "Inicio", href: "/" },
-  { name: "Películas", href: "/movies" },
-  { name: "Series", href: "/shows" },
+  { name: "Exprorar", href: "/movies" },
   { name: "Cuenta", href: "/account" },
 ];
 

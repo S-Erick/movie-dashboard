@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL } from "../../../api/tmdb.js";
+import { IMAGE_BASE_URL } from "../../../../api/tmdb.js";
 
 export function VideoCard({ video, onSelect }) {
   return (
@@ -28,7 +28,7 @@ export function VideoCard({ video, onSelect }) {
 
       <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
         <p className="text-white font-semibold text-sm leading-tight">
-          {video.name}
+          {video.name || video.title}
         </p>
       </div>
     </div>
