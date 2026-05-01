@@ -24,7 +24,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className=" fixed z-50 top-0 left-0 right-0 bg-[var(--bg-base)] flex items-center justify-between py-3 px-20">
+    <header className="bg-[var(--bg-base)] flex items-center justify-between py-6 px-25">
       <Link to="/" className="flex">
         LOGO
       </Link>
