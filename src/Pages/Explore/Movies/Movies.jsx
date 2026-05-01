@@ -1,26 +1,14 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { fetchPopularMovies, IMAGE_BASE_URL } from "../../../api/tmdb.js";
 
 export function Movies() {
   const [movies, setMovies] = useState([]);
-  const API_KEY = import.meta.env.VITE_TMDB_KEY;
-  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES`,
-        );
-        const data = await response.json();
-        setMovies(data.results);
-      } catch (error) {
-        console.error("Error cargando películas:", error);
-      }
-    };
-
-    fetchMovies();
-  }, [API_KEY]);
+    fetchPopularMovies()
+      .then(setMovies)
+      .catch((error) => console.error("Error cargando películas:", error));
+  }, []);
 
   return (
     <div className="p-8 xl:px-30">

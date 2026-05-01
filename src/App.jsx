@@ -6,8 +6,8 @@ import { UserAccount } from "./Pages/UserAccount/UserAccount.jsx";
 import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer.jsx";
 import { Login } from "./Pages/Login/Login.jsx";
 import { NotFoundPage } from "./Pages/404.jsx";
-import { Movies } from "./Pages/Movies/Movies.jsx";
-import { Shows } from "./Pages/Shows/Shows.jsx";
+import { Movies } from "./Pages/Explore/Movies/Movies.jsx";
+import { Shows } from "./Pages/Explore/Shows/Shows.jsx";
 
 export function App() {
   return (
