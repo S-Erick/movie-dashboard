@@ -7,7 +7,6 @@ export function Modal({ video, onClose }) {
   const [liked, setLiked] = useState(false);
   const intervalRef = useRef(null);
 
-  // Close on Escape
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -16,7 +15,6 @@ export function Modal({ video, onClose }) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
-  // Simulate playback progress
   useEffect(() => {
     if (playing) {
       intervalRef.current = setInterval(() => {
@@ -106,12 +104,22 @@ export function Modal({ video, onClose }) {
                   className="text-white hover:opacity-70 transition-opacity"
                 >
                   {playing ? (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
                       <rect x="6" y="4" width="4" height="16" />
                       <rect x="14" y="4" width="4" height="16" />
                     </svg>
                   ) : (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
                       <polygon points="5,3 19,12 5,21" />
                     </svg>
                   )}
@@ -121,13 +129,27 @@ export function Modal({ video, onClose }) {
                   className="text-white hover:opacity-70 transition-opacity"
                 >
                   {muted ? (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                    >
                       <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" />
                       <line x1="23" y1="9" x2="17" y2="15" />
                       <line x1="17" y1="9" x2="23" y2="15" />
                     </svg>
                   ) : (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                    >
                       <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" />
                       <path d="M15.54,8.46a5,5,0,0,1,0,7.07" />
                       <path d="M19.07,4.93a10,10,0,0,1,0,14.14" />
@@ -136,7 +158,10 @@ export function Modal({ video, onClose }) {
                 </button>
                 <span className="text-white/70 text-xs">
                   {Math.floor((progress * 0.6) / 10)}:
-                  {String(Math.floor(((progress * 0.6) % 10) * 6)).padStart(2, "0")}{" "}
+                  {String(Math.floor(((progress * 0.6) % 10) * 6)).padStart(
+                    2,
+                    "0",
+                  )}{" "}
                   / {video.duration}
                 </span>
               </div>
@@ -156,10 +181,26 @@ export function Modal({ video, onClose }) {
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                   </svg>
                 </button>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="hover:opacity-70 cursor-pointer">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  className="hover:opacity-70 cursor-pointer"
+                >
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="hover:opacity-70 cursor-pointer">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  className="hover:opacity-70 cursor-pointer"
+                >
                   <circle cx="18" cy="5" r="3" />
                   <circle cx="6" cy="12" r="3" />
                   <circle cx="18" cy="19" r="3" />
@@ -178,7 +219,9 @@ export function Modal({ video, onClose }) {
               {video.tag}
             </span>
           )}
-          <h2 className="text-white font-semibold text-lg mt-1">{video.title}</h2>
+          <h2 className="text-white font-semibold text-lg mt-1">
+            {video.title}
+          </h2>
           <p className="text-gray-400 text-sm mt-1">{video.desc}</p>
         </div>
       </div>
