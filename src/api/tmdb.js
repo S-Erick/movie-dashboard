@@ -11,6 +11,8 @@ export async function fetchPopularMovies() {
   return data.results;
 }
 
+console.log(fetchPopularMovies());
+
 export async function fetchPopularShows() {
   const response = await fetch(
     `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=es-ES`,

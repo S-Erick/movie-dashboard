@@ -3,6 +3,7 @@
 :root {
   /* Backgrounds */
   --bg-base:      #0f0f0f;
+  --bg-2:      #0f0f0f9a;
 
   /* Borders */
   --border-1:  #6b7280c0;
@@ -13,6 +14,7 @@
   --text-base:   #dedef0f5;
   --text-2:   #6B7280;
   --text-3:   #ffffff0f;
+  --text-4:   #0c1b42;
 
 }
 body {
