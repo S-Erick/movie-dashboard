@@ -21,3 +21,16 @@ export async function fetchPopularShows() {
   const data = await response.json();
   return data.results;
 }
+
+console.log(fetchPopularShows());
+
+export async function fetchTrending() {
+  const response = await fetch(
+    `${BASE_URL}/trending/all/day?api_key=${API_KEY}&language=es-ES`,
+  );
+  if (!response.ok) throw new Error(`Error ${response.status}`);
+  const data = await response.json();
+  return data.results;
+}
+
+console.log(fetchTrending());

@@ -38,7 +38,7 @@ export function Modal({ video, onClose }) {
         <div className="bg-[var(--bg-base)] flex flex-col p-4 gap-2">
           <div className="flex w-full justify-between items-center ">
             <h2 className="text-[var(--text-base)] font-semibold text-lg mt-1">
-              {video.title}
+              {video.title || video.original_name}
             </h2>
             <button
               onClick={() => setLiked((l) => !l)}
