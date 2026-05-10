@@ -9,7 +9,7 @@ export function Explore404() {
         Lo sentimos, la página que estás buscando no existe. Por favor, verifica
         la URL o regresa a la página de{" "}
         <strong>
-          <Link className="text-decoration underline " to="/movies">
+          <Link className="text-decoration underline " to="/foryou">
             inicio
           </Link>
         </strong>

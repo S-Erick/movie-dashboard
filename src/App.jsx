@@ -10,6 +10,7 @@ import { Explore404 } from "./Pages/Explore/SubPages/404Explore.jsx";
 import { Movies } from "./Pages/Explore/SubPages/Movies.jsx";
 import { Shows } from "./Pages/Explore/SubPages/Shows.jsx";
 import { Explore } from "./Pages/Explore/Explore.jsx";
+import { ForYou } from "./Pages/Explore/SubPages/ForYou.jsx";
 
 export function App() {
   return (
@@ -23,6 +24,7 @@ export function App() {
         <Route element={<Explore />}>
           <Route path="/movies" element={<Movies />} />
           <Route path="/shows" element={<Shows />} />
+          <Route path="/foryou" element={<ForYou />} />
           <Route path="/404" element={<Explore404 />} />
         </Route>
 

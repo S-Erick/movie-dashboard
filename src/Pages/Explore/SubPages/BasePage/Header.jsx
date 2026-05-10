@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const tabs = [
-  { name: "Para Ti", href: "/404" },
+  { name: "Para Ti", href: "/foryou" },
   { name: "Peliculas", href: "/movies" },
   { name: "Series", href: "/shows" },
   { name: "Guardados", href: "/404" },
