@@ -2,23 +2,33 @@ import { useState } from "react";
 import { IMAGE_BASE_URL } from "../../../../../api/tmdb.js";
 import { Link } from "react-router-dom";
 
-const getLiked = () => {
-  try { return JSON.parse(localStorage.getItem("liked_videos") || "[]"); }
+const getList = (key) => {
+  try { return JSON.parse(localStorage.getItem(key) || "[]"); }
   catch { return []; }
 };
 
+const toggleStorage = (key, video, next) => {
+  const current = getList(key);
+  const updated = next
+    ? [...current, video]
+    : current.filter((v) => v.id !== video.id);
+  localStorage.setItem(key, JSON.stringify(updated));
+};
+
 export function Modal({ video, onClose }) {
-  const [liked, setLiked] = useState(() => getLiked().some((v) => v.id === video.id));
-  const [saved, setSaved] = useState(false);
+  const [liked, setLiked] = useState(() => getList("liked_videos").some((v) => v.id === video.id));
+  const [saved, setSaved] = useState(() => getList("saved_videos").some((v) => v.id === video.id));
 
   const handleLike = () => {
     const next = !liked;
     setLiked(next);
-    const current = getLiked();
-    const updated = next
-      ? [...current, video]
-      : current.filter((v) => v.id !== video.id);
-    localStorage.setItem("liked_videos", JSON.stringify(updated));
+    toggleStorage("liked_videos", video, next);
+  };
+
+  const handleSave = () => {
+    const next = !saved;
+    setSaved(next);
+    toggleStorage("saved_videos", video, next);
   };
 
   return (
@@ -73,7 +83,7 @@ export function Modal({ video, onClose }) {
                 </svg>
               </button>
               <button
-                onClick={() => setSaved((s) => !s)}
+                onClick={handleSave}
                 className="transition-transform hover:scale-110"
               >
                 <svg

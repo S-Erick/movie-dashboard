@@ -11,6 +11,7 @@ import { Movies } from "./Pages/Explore/SubPages/Movies.jsx";
 import { Shows } from "./Pages/Explore/SubPages/Shows.jsx";
 import { Explore } from "./Pages/Explore/Explore.jsx";
 import { ForYou } from "./Pages/Explore/SubPages/ForYou.jsx";
+import { Likes } from "./Pages/Explore/SubPages/Likes.jsx";
 import { Saved } from "./Pages/Explore/SubPages/Saved.jsx";
 
 export function App() {
@@ -26,6 +27,7 @@ export function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/shows" element={<Shows />} />
           <Route path="/foryou" element={<ForYou />} />
+          <Route path="/liked" element={<Likes />} />
           <Route path="/saved" element={<Saved />} />
           <Route path="/404" element={<Explore404 />} />
         </Route>

@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { VideoCard } from "./BasePage/BasePageMain/VideoCard.jsx";
 import { Modal } from "./BasePage/BasePageMain/Modal.jsx";
 
-export function Saved() {
-  const [saved, setSaved] = useState([]);
+export function Likes() {
+  const [liked, setLiked] = useState([]);
   const [selected, setSelected] = useState(null);
 
   const syncFromStorage = () => {
     try {
-      setSaved(JSON.parse(localStorage.getItem("saved_videos") || "[]"));
+      setLiked(JSON.parse(localStorage.getItem("liked_videos") || "[]"));
     } catch {
-      setSaved([]);
+      setLiked([]);
     }
   };
 
@@ -23,7 +23,7 @@ export function Saved() {
     syncFromStorage();
   };
 
-  if (saved.length === 0) {
+  if (liked.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-[75vh]">
         <p className="text-[var(--text-2)]">
@@ -37,7 +37,7 @@ export function Saved() {
     <div>
       <h1 className="mb-6 text-lg font-semibold">Guardados:</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-        {saved.map((item) => (
+        {liked.map((item) => (
           <VideoCard key={item.id} video={item} onSelect={setSelected} />
         ))}
       </div>

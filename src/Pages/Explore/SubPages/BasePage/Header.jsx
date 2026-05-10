@@ -5,8 +5,8 @@ const tabs = [
   { name: "Para Ti", href: "/foryou" },
   { name: "Peliculas", href: "/movies" },
   { name: "Series", href: "/shows" },
+  { name: "Me Gusta", href: "/liked" },
   { name: "Guardados", href: "/saved" },
-  { name: "Ver Despues", href: "/404" },
 ];
 
 export function Header() {
