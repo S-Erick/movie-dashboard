@@ -19,9 +19,11 @@ export function BadgeColor({ type }) {
   if (type === "HOT") return "bg-orange-600/90";
   return "bg-red-600/90";
 }
-export function Card({ card }) {
-  const bgClass = card.bg || "";
-  const bgInline = card.bgStyle ? { background: card.bgStyle } : {};
+export function Card({ card, image }) {
+  const bgClass = image ? "" : card.bg || "";
+  const bgInline = image
+    ? { backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }
+    : card.bgStyle ? { background: card.bgStyle } : {};
   const isDiscussion = card.type === "trending" || card.type === "community";
   const isEvent = card.type === "event" || card.type === "festival";
   const isLive = card.type === "premiere" || card.type === "genre";
@@ -31,6 +33,9 @@ export function Card({ card }) {
       className={`relative flex-none w-[350px] aspect-[1/1.2] border border-[var(--border-1)] overflow-hidden text-white select-none ${bgClass}`}
       style={bgInline}
     >
+      {/* overlay oscuro sobre imagen */}
+      {image && <div className="absolute inset-0 bg-black/50 pointer-events-none" />}
+
       {/* fondo retro */}
       <div
         className="absolute inset-0 pointer-events-none"

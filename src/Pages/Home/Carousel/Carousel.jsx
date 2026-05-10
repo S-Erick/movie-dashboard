@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { fetchTrending } from "../../../api/tmdb.js";
 import { movieCards } from "./DataCarousel.jsx";
 import { Card } from "./Card.jsx";
 
@@ -8,6 +9,22 @@ const GAP = 14;
 const STEP = CARD_W + GAP;
 
 export function MovieCarousel() {
+  const [bgImages, setBgImages] = useState([]);
+
+  useEffect(() => {
+    fetchTrending()
+      .then((results) =>
+        setBgImages(
+          results.slice(0, 6).map((item) =>
+            item.backdrop_path
+              ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}`
+              : null
+          )
+        )
+      )
+      .catch(console.error);
+  }, []);
+
   const trackRef = useRef(null);
   const wrapRef = useRef(null);
   const posRef = useRef(STEP * movieCards.length);
@@ -134,7 +151,7 @@ export function MovieCarousel() {
           style={{ gap: GAP }}
         >
           {allCards.map((card, i) => (
-            <Card key={i} card={card} />
+            <Card key={i} card={card} image={bgImages[i % movieCards.length]} />
           ))}
         </div>
       </div>
