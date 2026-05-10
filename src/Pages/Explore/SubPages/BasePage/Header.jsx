@@ -5,7 +5,7 @@ const tabs = [
   { name: "Para Ti", href: "/foryou" },
   { name: "Peliculas", href: "/movies" },
   { name: "Series", href: "/shows" },
-  { name: "Guardados", href: "/404" },
+  { name: "Guardados", href: "/saved" },
   { name: "Ver Despues", href: "/404" },
 ];
 

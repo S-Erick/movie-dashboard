@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const options = [
   { name: "Inicio", href: "/" },
-  { name: "Exprorar", href: "/movies" },
+  { name: "Exprorar", href: "/foryou" },
   { name: "Cuenta", href: "/account" },
 ];
 

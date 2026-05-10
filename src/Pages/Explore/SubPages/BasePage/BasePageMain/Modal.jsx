@@ -1,10 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { IMAGE_BASE_URL } from "../../../../../api/tmdb.js";
 import { Link } from "react-router-dom";
 
+const getLiked = () => {
+  try { return JSON.parse(localStorage.getItem("liked_videos") || "[]"); }
+  catch { return []; }
+};
+
 export function Modal({ video, onClose }) {
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(() => getLiked().some((v) => v.id === video.id));
   const [saved, setSaved] = useState(false);
+
+  const handleLike = () => {
+    const next = !liked;
+    setLiked(next);
+    const current = getLiked();
+    const updated = next
+      ? [...current, video]
+      : current.filter((v) => v.id !== video.id);
+    localStorage.setItem("liked_videos", JSON.stringify(updated));
+  };
 
   return (
     // fondo
@@ -43,7 +58,7 @@ export function Modal({ video, onClose }) {
             </h2>
             <div className="flex gap-2">
               <button
-                onClick={() => setLiked((l) => !l)}
+                onClick={handleLike}
                 className="transition-transform hover:scale-110"
               >
                 <svg
