@@ -29,7 +29,7 @@ export function Header() {
       <input
         type="text"
         placeholder="Buscar"
-        className="bg-[var(--border-2)] text-[var(--text-base)] text-sm px-4 py-1.5 outline-none border border-[var(--border-1)] placeholder-[var(--text-2)] focus:border-[var(--border-3)]"
+        className=" cursor-not-allowed bg-[var(--border-2)] text-[var(--text-base)] text-sm px-4 py-1.5 outline-none border border-[var(--border-1)] placeholder-[var(--text-2)] focus:border-[var(--border-3)]"
       />
     </div>
   );
