@@ -11,7 +11,7 @@ export function Home() {
             "url(https://i.postimg.cc/25QvGhJg/cdccdf53-62a7-454d-b895-247477770e53.png) center/cover no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] " />
         <h1 className="relative text-4xl font-bold text-center">
           Películas y series <br /> ilimitadas
         </h1>

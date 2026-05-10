@@ -24,8 +24,8 @@ export function Header() {
 
   return (
     <header className="bg-[var(--bg-base)] flex items-center justify-between py-6 px-10 md:px-25">
-      <Link to="/" className="flex">
-        LOGO
+      <Link to="/" className="flex border-b-1 hover:bg-[var(--bg-3)] px-1">
+        Movie Dashboard
       </Link>
 
       <nav className="hidden md:block">
