@@ -6,10 +6,10 @@ import { UserAccount } from "./Pages/UserAccount/UserAccount.jsx";
 import { MoviePlayer } from "./Pages/MoviePlayer/MoviePlayer.jsx";
 import { Login } from "./Pages/Login/Login.jsx";
 import { NotFoundPage } from "./Pages/404.jsx";
-import { Explore404 } from "./Pages/Explore/404Explore.jsx";
-import { Movies } from "./Pages/Explore/Movies.jsx";
-import { Shows } from "./Pages/Explore/Shows.jsx";
-import { Explore } from "./Pages/Explore/Components/Explore.jsx";
+import { Explore404 } from "./Pages/Explore/SubPages/404Explore.jsx";
+import { Movies } from "./Pages/Explore/SubPages/Movies.jsx";
+import { Shows } from "./Pages/Explore/SubPages/Shows.jsx";
+import { Explore } from "./Pages/Explore/Explore.jsx";
 
 export function App() {
   return (

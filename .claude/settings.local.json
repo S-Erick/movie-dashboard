@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\mates\\\\OneDrive\\\\Documentos\\\\PJs\\\\MovieDashboard\\\\src\\\\Pages\\\\Explore\\\\\" -Recurse | Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\mates\\\\OneDrive\\\\Documentos\\\\PJs\\\\MovieDashboard\\\\src\\\\Pages\\\\Explore\" -Recurse)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL } from "../../../../api/tmdb.js";
+import { IMAGE_BASE_URL } from "../../../../../api/tmdb.js";
 
 export function VideoCard({ video, onSelect }) {
   return (

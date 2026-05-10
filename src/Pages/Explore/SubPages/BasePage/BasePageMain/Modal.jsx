@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { IMAGE_BASE_URL } from "../../../../api/tmdb.js";
+import { IMAGE_BASE_URL } from "../../../../../api/tmdb.js";
 import { Link } from "react-router-dom";
 
 export function Modal({ video, onClose }) {
   const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   return (
     // fondo
@@ -40,21 +41,44 @@ export function Modal({ video, onClose }) {
             <h2 className="text-[var(--text-base)] font-semibold text-lg mt-1">
               {video.title || video.original_name}
             </h2>
-            <button
-              onClick={() => setLiked((l) => !l)}
-              className="transition-transform hover:scale-110"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill={liked ? "#ef4444" : "none"}
-                stroke={liked ? "#ef4444" : "white"}
-                strokeWidth="1"
+            <div className="flex gap-2">
+              <button
+                onClick={() => setLiked((l) => !l)}
+                className="transition-transform hover:scale-110"
               >
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
-            </button>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill={liked ? "#ef4444" : "none"}
+                  stroke={liked ? "#ef4444" : "white"}
+                  strokeWidth="1"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </button>
+              <button
+                onClick={() => setSaved((s) => !s)}
+                className="transition-transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={22}
+                  height={22}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M4.5 3H19.5V21L12 16.5L4.5 21V3Z"
+                    fill={saved ? "white" : "none"}
+                    stroke="white"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
           <p className="text-[var(--text-2)] text-sm mt-1">{video.overview}</p>
           <Link

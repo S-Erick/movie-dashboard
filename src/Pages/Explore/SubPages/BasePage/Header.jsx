@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const tabs = [
+  { name: "Para Ti", href: "/404" },
   { name: "Peliculas", href: "/movies" },
   { name: "Series", href: "/shows" },
-  { name: "Para Ti", href: "/404" },
   { name: "Guardados", href: "/404" },
-  { name: "En Vivo", href: "/404" },
   { name: "Ver Despues", href: "/404" },
-  { name: "Seguir Viendo", href: "/404" },
 ];
 
 export function Header() {
